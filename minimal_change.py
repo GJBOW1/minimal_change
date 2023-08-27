@@ -6,6 +6,14 @@ def coin_change(pennies):
     change =  round((((pennies / 25) - math.floor(pennies / 25)) * 25))
     if pennies % 25 == 0:
         return "Your change for " + str(pennies) + " pennies is: "  + str(pennies / 25) + " quarters."
+    elif change % 25 == 24:
+        return "Your change for " + str(pennies) + " pennies is: "  + str(math.floor(pennies / 25)) + " quarters, 2 dimes, and 4 pennies."
+    elif change % 25 == 23:
+        return "Your change for " + str(pennies) + " pennies is: "  + str(math.floor(pennies / 25)) + " quarters, 2 dimes, and 3 pennies."
+    elif change % 25 == 22:
+        return "Your change for " + str(pennies) + " pennies is: "  + str(math.floor(pennies / 25)) + " quarters, 2 dimes, and 2 pennies."
+    elif change % 25 == 21:
+        return "Your change for " + str(pennies) + " pennies is: "  + str(math.floor(pennies / 25)) + " quarters, 2 dimes, and 1 penny."
     elif change % 25 == 20:
         return "Your change for " + str(pennies) + " pennies is: "  + str(math.floor(pennies / 25)) + " quarters and 2 dimes."
     elif change % 25 == 19:
@@ -49,4 +57,4 @@ def coin_change(pennies):
 
 
 # Change the number of pennies below to get the exact change.
-print(coin_change(1017))
+print(coin_change(1023))
